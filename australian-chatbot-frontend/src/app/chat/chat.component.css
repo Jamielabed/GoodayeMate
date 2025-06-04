@@ -1,0 +1,75 @@
+/* Center the chat container and set a max width */
+.chat-container {
+  display: flex;
+  flex-direction: column;
+  height: 400px; /* Set a fixed height for the chat box */
+  width: 100%; /* Full width for responsiveness */
+  max-width: 600px; /* Limit the maximum width */
+  margin: 20px auto; /* Center horizontally and add vertical spacing */
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 10px;
+  overflow-y: auto; /* Enable vertical scrolling */
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow for better appearance */
+}
+
+/* Style for individual messages */
+.message {
+  margin-bottom: 10px;
+  padding: 8px;
+  border-radius: 5px;
+  max-width: 80%;
+  word-wrap: break-word;
+}
+
+/* Style for user messages */
+.message.user {
+  align-self: flex-end;
+  background-color: #d1e7dd;
+  color: #0f5132;
+}
+
+/* Style for bot messages */
+.message:not(.user) {
+  align-self: flex-start;
+  background-color: #e9ecef;
+  color: #495057;
+}
+
+/* Style for the input container */
+.input-container {
+  display: flex;
+  margin-top: 10px;
+  gap: 10px;
+}
+
+/* Style for the input field */
+.input-container input {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Style for the send button */
+.input-container button {
+  padding: 8px 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.input-container button:disabled {
+  background-color: #6c757d;
+  cursor: not-allowed;
+}
+
+/* Style for the loading indicator */
+.loading {
+  text-align: center;
+  color: #6c757d;
+  font-style: italic;
+}
