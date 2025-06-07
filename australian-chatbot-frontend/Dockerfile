@@ -20,7 +20,7 @@ RUN npm run build --prod
 FROM nginx:alpine
 
 # Copy the built Angular app to the Nginx HTML directory
-COPY --from=build /app/dist/australian-chatbot-frontend /usr/share/nginx/html
+COPY --from=build /app/dist/australian-chatbot-frontend/browser /usr/share/nginx/html
 
 # Expose the port Nginx runs on
 EXPOSE 80
