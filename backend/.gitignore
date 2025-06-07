@@ -8,3 +8,19 @@ __pycache__/
 # Ignore virtual environment folders
 venv/
 .env/
+
+# Ignore log files
+*.log
+
+# Ignore IDE settings
+.vscode/
+.idea/
+
+# Ignore Docker-related files
+*.pid
+*.sock
+*.tar
+
+# Ignore Kubernetes secrets and configs
+*.secret.yaml
+*.config.yaml

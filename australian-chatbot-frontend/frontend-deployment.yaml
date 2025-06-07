@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: goodayemate-frontend
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: goodayemate-frontend
+  template:
+    metadata:
+      labels:
+        app: goodayemate-frontend
+    spec:
+      containers:
+      - name: frontend
+        image: jamielabed/goodayemate-frontend:latest
+        ports:
+        - containerPort: 80
+      imagePullSecrets:
+      - name: dockerhub-secret
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: goodayemate-frontend
+spec:
+  selector:
+    app: goodayemate-frontend
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 80
+  type: LoadBalancer

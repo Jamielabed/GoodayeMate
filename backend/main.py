@@ -14,6 +14,14 @@ from dotenv import load_dotenv
 app = FastAPI()
 load_dotenv()
 
+# Ensure the audio folder exists
+def ensure_audio_folder_exists():
+    audio_folder = os.path.join(os.getcwd(), "audio")
+    if not os.path.exists(audio_folder):
+        os.makedirs(audio_folder)
+
+ensure_audio_folder_exists()
+
 # Serve the audio folder as static files
 app.mount("/audio", StaticFiles(directory="audio"), name="audio")
 

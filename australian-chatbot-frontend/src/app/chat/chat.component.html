@@ -1,12 +1,16 @@
 <div class="chat-container">
-  <div *ngFor="let message of messages" class="message" [class.user]="message.isUser">
-    <p>{{ message.text }}</p>
-    <!-- Show audio player if audioUrl exists -->
-    <audio *ngIf="message.audioUrl" [src]="message.audioUrl" controls></audio>
+  <!-- Messages container -->
+  <div class="messages-container">
+    <div *ngFor="let message of messages" class="message" [class.user]="message.isUser">
+      <p>{{ message.text }}</p>
+      <!-- Show audio player if audioUrl exists -->
+      <audio *ngIf="message.audioUrl" [src]="message.audioUrl" controls></audio>
+    </div>
+
+    <div *ngIf="isLoading" class="loading">Bruce is thinking...</div>
   </div>
 
-  <div *ngIf="isLoading" class="loading">Bruce is thinking...</div>
-
+  <!-- Input container -->
   <div class="input-container">
     <input [(ngModel)]="userMessage" (keyup.enter)="sendMessage()" placeholder="Type your message..." />
     <button (click)="sendMessage()" [disabled]="isLoading">Send</button>

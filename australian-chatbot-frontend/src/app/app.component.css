@@ -1,0 +1,23 @@
+/* Style for the app container */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 100vh; /* Full height of the viewport */
+  background-color: #d4edda; /* Light green background */
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Style for the title */
+.app-title {
+  font-size: 3rem; /* Large font size */
+  font-weight: bold;
+  color: #571515; /* Dark green color */
+  text-transform: uppercase; /* Make the text all caps */
+  text-align: center; /* Center the text */
+  margin-bottom: 20px; /* Add some space below the title */
+  font-family: 'Poppins', sans-serif; /* Use the Poppins font */
+}
+

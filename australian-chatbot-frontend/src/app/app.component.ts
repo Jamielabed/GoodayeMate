@@ -10,5 +10,5 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  protected title = 'australian-chatbot-frontend';
+  protected title = 'Bruce - Your Aussie AI Chatbot';
 }

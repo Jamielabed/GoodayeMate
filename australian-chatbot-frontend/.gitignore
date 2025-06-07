@@ -10,6 +10,7 @@
 /node_modules
 npm-debug.log
 yarn-error.log
+pnpm-debug.log
 
 # IDEs and editors
 .idea/
@@ -40,3 +41,14 @@ testem.log
 # System files
 .DS_Store
 Thumbs.db
+
+# Docker-related files
+*.log
+*.pid
+*.sock
+*.tar
+
+# Kubernetes-related files
+*.secret.yaml
+*.config.yaml
+*.kubeconfig

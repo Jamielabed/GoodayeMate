@@ -1,61 +1,76 @@
-/* Center the chat container and set a max width */
+/* Style for the chat container */
 .chat-container {
   display: flex;
   flex-direction: column;
   height: 400px; /* Set a fixed height for the chat box */
-  width: 100%; /* Full width for responsiveness */
+  width: 100%;
   max-width: 600px; /* Limit the maximum width */
   margin: 20px auto; /* Center horizontally and add vertical spacing */
   border: 1px solid #ccc;
   border-radius: 8px;
-  padding: 10px;
+  overflow: hidden; /* Prevent content from overflowing */
+  background-color: #2c2c2c; /* Charcoal gray background */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+}
+
+/* Style for the messages container */
+.messages-container {
+  flex: 1; /* Take up all available space */
   overflow-y: auto; /* Enable vertical scrolling */
-  background-color: #f9f9f9;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow for better appearance */
+  padding: 10px;
+  display: flex;
+  flex-direction: column; /* Stack messages vertically */
 }
 
 /* Style for individual messages */
 .message {
-  margin-bottom: 10px;
-  padding: 8px;
+  margin-bottom: 10px; /* Reduce spacing between messages */
+  padding: 0px 4px; /* Reduce top and bottom padding, keep side padding */
   border-radius: 5px;
   max-width: 80%;
   word-wrap: break-word;
+  color: #fff; /* White text for better contrast */
 }
 
 /* Style for user messages */
 .message.user {
-  align-self: flex-end;
-  background-color: #d1e7dd;
-  color: #0f5132;
+  align-self: flex-end; /* Align user messages to the right */
+  background-color: #4a90e2; /* Light blue for user messages */
+  color: #fff; /* White text */
+  text-align: right; /* Align text inside the message to the right */
 }
 
 /* Style for bot messages */
 .message:not(.user) {
-  align-self: flex-start;
-  background-color: #e9ecef;
-  color: #495057;
+  align-self: flex-start; /* Align bot messages to the left */
+  background-color: #3a3a3a; /* Slightly lighter gray for bot messages */
+  color: #fff; /* White text */
+  text-align: left; /* Align text inside the message to the left */
 }
 
 /* Style for the input container */
 .input-container {
   display: flex;
-  margin-top: 10px;
+  padding: 10px;
   gap: 10px;
+  border-top: 1px solid #444; /* Darker border to match the theme */
+  background-color: #1e1e1e; /* Dark gray background for the input container */
 }
 
 /* Style for the input field */
 .input-container input {
   flex: 1;
   padding: 8px;
-  border: 1px solid #ccc;
+  border: 1px solid #555; /* Darker border for the input field */
   border-radius: 4px;
+  background-color: #2c2c2c; /* Match the chat background */
+  color: #fff; /* White text */
 }
 
 /* Style for the send button */
 .input-container button {
   padding: 8px 16px;
-  background-color: #007bff;
+  background-color: #4a90e2; /* Light blue for the button */
   color: white;
   border: none;
   border-radius: 4px;
@@ -63,13 +78,13 @@
 }
 
 .input-container button:disabled {
-  background-color: #6c757d;
+  background-color: #6c757d; /* Gray for disabled state */
   cursor: not-allowed;
 }
 
 /* Style for the loading indicator */
 .loading {
   text-align: center;
-  color: #6c757d;
+  color: #ccc; /* Light gray text for the loading indicator */
   font-style: italic;
 }
