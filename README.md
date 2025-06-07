@@ -81,6 +81,11 @@ Install Dependencies
 npm install
 ```
 
+Build the Angular app for production
+```bash
+npm run build --prod
+```
+
 Run the Frontend
 ```bash
 ng serve
